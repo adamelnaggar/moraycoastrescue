@@ -14,7 +14,9 @@
         /* General Styles */
         :root {
     --primary-color: #f6983a;       /* Warm orange */
-    --primary-color-dark: #d67a2c;  /* Darker shade for hover effects */
+    --primary-color-dark: #d67a2c;
+    --secondary-button: #e85d3a;       /* Coral red */
+--secondary-button-dark: #c44a2e;  /* Darker coral */  /* Darker shade for hover effects */
     --secondary-color: #2e3a59;     /* Deep navy (contrasts well) */
     --accent-color: #ffd08a;        /* Soft orange/peach highlight */
     --dark-blue: #1c2e46;           /* Rich dark background */
@@ -593,10 +595,7 @@
         }
         /* Fixed Book Now Button Styles */
 .fixed-book-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
+    position: relative;
     background-color: var(--primary-color); /* Same as splash buttons */
     color: white;
     padding: 12px 25px;
@@ -617,6 +616,23 @@
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.waitlist-btn {
+    background-color: var(--secondary-button);
+}
+.waitlist-btn:hover {
+    background-color: var(--secondary-button-dark);
+}
+
+.fixed-book-btns {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* space between buttons */
+    z-index: 99;
 }
 
 .prices-section {
@@ -656,11 +672,14 @@
 /* Responsive adjustments */
 @media (max-width: 576px) {
     .fixed-book-btn {
-        bottom: 20px;
-        right: 20px;
         padding: 10px 20px;
         font-size: 0.9rem;
     }
+    .fixed-book-btns {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
 }
 
 /* Brand Logos Bar Styles */
@@ -737,12 +756,27 @@
     opacity: 1;
 }
     </style>
+
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
 </head>
 <body>
-<!-- Fixed Book Now Button -->
+<!-- Fixed Waitlist and Book Now Buttons -->
+ <div class="fixed-book-btns">
+  <a href="#tally-open=nreDbl&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave" class="fixed-book-btn waitlist-btn">
+      <i class="fas fa-calendar-check"></i> Join Waitlist
+  </a>
+  <a href="https://fareharbor.com/embeds/book/bluecoastsurf-paddle/?full-items=yes&flow=1418448" class="fixed-book-btn">
+      <i class="fas fa-calendar-check"></i> Book A Course
+  </a>
+</div>
+ <!-- <a href="#tally-open=nreDbl&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave" id="fixed-book-btn" class="fixed-book-btn">
+    <i class="fas fa-calendar-check"></i> Join Waitlist
+</a>
 <a href="https://fareharbor.com/embeds/book/bluecoastsurf-paddle/?full-items=yes&flow=1418448" id="fixed-book-btn" class="fixed-book-btn">
     <i class="fas fa-calendar-check"></i> Book A Course
-</a>
+</a> -->
+
  <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -754,6 +788,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="https://fareharbor.com/embeds/book/bluecoastsurf-paddle/?full-items=yes&flow=1418448">Book A Course</a></li>
+                <li><a href="#tally-open=nreDbl&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave">Join SLSGB Waitlist</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -854,6 +889,7 @@
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="https://fareharbor.com/embeds/book/bluecoastsurf-paddle/?full-items=yes&flow=1418448">SLSGB Courses Scotland</a></li>
+                        <li><a href="#tally-open=nreDbl&tally-layout=modal&tally-emoji-text=👋&tally-emoji-animation=wave">Join SLSGB Waitlist</a></li>
                         <li><a href="https://www.bluecoastcullen.co.uk/jobs" target="_blank">Instructor Jobs Cullen</a></li>
                     </ul>
                 </div>
